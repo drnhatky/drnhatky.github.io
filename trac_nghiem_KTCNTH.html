@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Trắc nghiệm tự động</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .question { margin-bottom: 30px; padding: 15px; background: #f9f9f9; border-radius: 8px; border: 1px solid #ccc; }
+        .question h3 { margin-top: 0; }
+        .options label { display: block; margin-bottom: 5px; cursor: pointer; }
+        .correct { color: green; font-weight: bold; }
+        .incorrect { color: red; font-weight: bold; }
+    </style>
+    <script>
+        function checkAnswer(questionNum, selectedOption) {
+            const correctAnswer = document.getElementById('answer-' + questionNum).value;
+            const labels = document.querySelectorAll('.question-' + questionNum + ' label');
+            labels.forEach(label => {
+                label.classList.remove('correct', 'incorrect');
+            });
+            const selectedLabel = document.getElementById('label-' + questionNum + '-' + selectedOption);
+            if (selectedOption === correctAnswer) {
+                selectedLabel.classList.add('correct');
+            } else {
+                selectedLabel.classList.add('incorrect');
+                document.getElementById('label-' + questionNum + '-' + correctAnswer).classList.add('correct');
+            }
+        }
+    </script>
+</head>
+<body>
+<h1>Bài trắc nghiệm</h1>
+<div class="question question-1">
+<h3>Câu 1: Tủy gai tận cùng ở ngang mức:</h3>
+<div class="options">
+<label id="label-1-A"><input type="radio" name="q1" onclick="checkAnswer(1, 'A')"> A. Bờ dưới đốt sống ngực 10 hay bờ trên đốt sống ngực 11</label>
+<label id="label-1-B"><input type="radio" name="q1" onclick="checkAnswer(1, 'B')"> B. Bờ dưới đốt sống ngực 11 hay bờ trên đốt sống ngực 12</label>
+<label id="label-1-C"><input type="radio" name="q1" onclick="checkAnswer(1, 'C')"> C. Bờ dưới đốt sống ngực 12 hay bờ trên đốt sống thắt lưng 1</label>
+<label id="label-1-D"><input type="radio" name="q1" onclick="checkAnswer(1, 'D')"> D. Bờ dưới đốt sống thắt lưng 1 hay bờ trên đốt sống thắt lưng 2</label>
+<input type="hidden" id="answer-1" value="D">
+</div>
+</div>
+<div class="question question-2">
+<h3>Câu 2: Yếu tố nào sau đây đưa máu từ tĩnh mạch về tim:</h3>
+<div class="options">
+<label id="label-2-A"><input type="radio" name="q2" onclick="checkAnswer(2, 'A')"> A. Khi thở ra lồng ngực giãn rộng, áp suất trong lồng ngực càng âm, tâm nhĩ và các tĩnh mạch lớn trong lồng ngực giãn hút màu về.</label>
+<label id="label-2-B"><input type="radio" name="q2" onclick="checkAnswer(2, 'B')"> B. Khi tâm thất trương, tim to ra làm áp suất trong lồng ngực càng âm, tĩnh mạch và tâm nhĩ giãn ra hút máu về tim</label>
+<label id="label-2-C"><input type="radio" name="q2" onclick="checkAnswer(2, 'C')"> C. Khi tâm thất thu sẽ kéo sàn nhĩ thất xuống do đó tâm nhĩ giãn rộng làm áp suất trong tâm nhĩ giảm, hút máu về tim</label>
+<label id="label-2-D"><input type="radio" name="q2" onclick="checkAnswer(2, 'D')"> D. Khi tâm thất trương làm áp suất trong tâm thất tăng, tạo sức hút máu từ nhĩ xuống thất và từ tĩnh mạch về nhĩ</label>
+<input type="hidden" id="answer-2" value="C">
+</div>
+</div>
+<div class="question question-3">
+<h3>Câu 3: Biphosphonate có tác dụng:</h3>
+<div class="options">
+<label id="label-3-A"><input type="radio" name="q3" onclick="checkAnswer(3, 'A')"> A. Ức chế tạo xương</label>
+<label id="label-3-B"><input type="radio" name="q3" onclick="checkAnswer(3, 'B')"> B. Giảm khối lượng xương</label>
+<label id="label-3-C"><input type="radio" name="q3" onclick="checkAnswer(3, 'C')"> C. Vửa ức chế hủy xương và giảm khối lượng xương</label>
+<label id="label-3-D"><input type="radio" name="q3" onclick="checkAnswer(3, 'D')"> D. Ức chế hủy xương</label>
+<input type="hidden" id="answer-3" value="C">
+</div>
+</div>
+<div class="question question-4">
+<h3>Câu 4: Bệnh nhân nữ 50 tuổi có tiền sử dùng thuốc kháng viêm NSAIDS vào viện vì đau bụng cấp tính. Bệnh nhân được phẫu thuật sau khi khởi phát triệu chứng khoảng 30 giờ, và chẩn đoán trong lúc mổ là thủng ổ loét hành tá tràng. Phương pháp phẫu thuật nên lựa chọn ưu tiên cho bệnh nhân này:</h3>
+<div class="options">
+<label id="label-4-A"><input type="radio" name="q4" onclick="checkAnswer(4, 'A')"> A. Cắt thần kinh X tại thân + tạo hình môn vị</label>
+<label id="label-4-B"><input type="radio" name="q4" onclick="checkAnswer(4, 'B')"> B. Cắt thần kinh X siêu chọn lọc + khâu lỗ thủng</label>
+<label id="label-4-C"><input type="radio" name="q4" onclick="checkAnswer(4, 'C')"> C. Khâu lỗ thủng đơn thuần</label>
+<label id="label-4-D"><input type="radio" name="q4" onclick="checkAnswer(4, 'D')"> D. Cắt hang vị + cắt thần kinh X tại thân</label>
+<input type="hidden" id="answer-4" value="C">
+</div>
+</div>
+<div class="question question-5">
+<h3>Câu 5: Ở Việt Nam trường hợp vỡ bàng quang thường gặp nhất là:</h3>
+<div class="options">
+<label id="label-5-A"><input type="radio" name="q5" onclick="checkAnswer(5, 'A')"> A. Chấn thương lúc bàng quang căng đầy</label>
+<label id="label-5-B"><input type="radio" name="q5" onclick="checkAnswer(5, 'B')"> B. Bàng quang phải chịu một sức căng quá mức do mất cảm giác</label>
+<label id="label-5-C"><input type="radio" name="q5" onclick="checkAnswer(5, 'C')"> C. Bàng quang bị xé rách hay đâm thủng</label>
+<label id="label-5-D"><input type="radio" name="q5" onclick="checkAnswer(5, 'D')"> D. Bàng quang có điểm yếu từ trước</label>
+<input type="hidden" id="answer-5" value="A">
+</div>
+</div>
+<div class="question question-6">
+<h3>Câu 6: Phẫu thuật Hartmann trong ung thư trực tràng là:</h3>
+<div class="options">
+<label id="label-6-A"><input type="radio" name="q6" onclick="checkAnswer(6, 'A')"> A. Cắt đoạn trực tràng, nối đại tràng với trực tràng còn lại</label>
+<label id="label-6-B"><input type="radio" name="q6" onclick="checkAnswer(6, 'B')"> B. Cắt đoạn trực tràng, đóng đầu dưới đưa đầu trên làm hậu môn nhân tạo</label>
+<label id="label-6-C"><input type="radio" name="q6" onclick="checkAnswer(6, 'C')"> C. Cắt toàn bộ trực tràng, nối đại tràng - ống hậu môn</label>
+<label id="label-6-D"><input type="radio" name="q6" onclick="checkAnswer(6, 'D')"> D. Cắt toàn bộ trực tràng ngả bụng - tầng sinh môn, làm hậu môn nhân tạo vĩnh viễn</label>
+<input type="hidden" id="answer-6" value="B">
+</div>
+</div>
+<div class="question question-7">
+<h3>Câu 7: Bệnh nhân có máu tụ dưới màng cứng mãn tính nào sau đây có chỉ định phẫu thuật:</h3>
+<div class="options">
+<label id="label-7-A"><input type="radio" name="q7" onclick="checkAnswer(7, 'A')"> A. Tỉnh, đau đầu nhiều, CT Scan máu tụ có bề dày 15mm</label>
+<label id="label-7-B"><input type="radio" name="q7" onclick="checkAnswer(7, 'B')"> B. Lơ mơ, CT Scan máu tụ có bề dày 5mm</label>
+<label id="label-7-C"><input type="radio" name="q7" onclick="checkAnswer(7, 'C')"> C. Tỉnh, đau đầu, CT Scan máu tụ có hình thấu kính lồi 2 mặt</label>
+<label id="label-7-D"><input type="radio" name="q7" onclick="checkAnswer(7, 'D')"> D. Tỉnh, đau đầu, CT Scan máu tụ đẩy lệch đường giữa lệch 2mm</label>
+<input type="hidden" id="answer-7" value="A">
+</div>
+</div>
+<div class="question question-8">
+<h3>Câu 8: Phát biểu nào sau đây là đúng về xẻ rãnh tuyến tiền liệt qua ngả niệu đạo (TUIP):</h3>
+<div class="options">
+<label id="label-8-A"><input type="radio" name="q8" onclick="checkAnswer(8, 'A')"> A. Thích hợp cho tuyến tiền liệt lớn</label>
+<label id="label-8-B"><input type="radio" name="q8" onclick="checkAnswer(8, 'B')"> B. Tỷ lệ biến chứng cao</label>
+<label id="label-8-C"><input type="radio" name="q8" onclick="checkAnswer(8, 'C')"> C. Tỷ lệ gây xuất tinh ngược dòng thấp hơn TURP</label>
+<label id="label-8-D"><input type="radio" name="q8" onclick="checkAnswer(8, 'D')"> D. Thường dẫn đến hội chứng sau cắt đốt</label>
+<input type="hidden" id="answer-8" value="C">
+</div>
+</div>
+<div class="question question-9">
+<h3>Câu 9: Giá trị của siêu âm trong bệnh lý viêm túi mật cấp, NGOẠI TRỪ:</h3>
+<div class="options">
+<label id="label-9-A"><input type="radio" name="q9" onclick="checkAnswer(9, 'A')"> A. Không xâm lấn, khó thực hiện nhiều lần</label>
+<label id="label-9-B"><input type="radio" name="q9" onclick="checkAnswer(9, 'B')"> B. Đánh giá sỏi, dịch mật và tình trạng giãn đường mật</label>
+<label id="label-9-C"><input type="radio" name="q9" onclick="checkAnswer(9, 'C')"> C. Khó phát hiện sỏi nhỏ, đường tiêu hóa chứa nhiều hơi</label>
+<label id="label-9-D"><input type="radio" name="q9" onclick="checkAnswer(9, 'D')"> D. Phụ thuộc vào người siêu âm</label>
+<input type="hidden" id="answer-9" value="A">
+</div>
+</div>
+<div class="question question-10">
+<h3>Câu 10: Sự hành kinh xảy ra là do sự sụt giảm đột ngột của:</h3>
+<div class="options">
+<label id="label-10-A"><input type="radio" name="q10" onclick="checkAnswer(10, 'A')"> A. Estrogen ở giai đoạn tăng sinh</label>
+<label id="label-10-B"><input type="radio" name="q10" onclick="checkAnswer(10, 'B')"> B. Estrogen và Progesterone ở giai đoạn tăng sinh</label>
+<label id="label-10-C"><input type="radio" name="q10" onclick="checkAnswer(10, 'C')"> C. FSH và LH ở giai đoạn chế tiết</label>
+<label id="label-10-D"><input type="radio" name="q10" onclick="checkAnswer(10, 'D')"> D. Estrogen và Progesterone ở giai đoạn chế tiết</label>
+<input type="hidden" id="answer-10" value="D">
+</div>
+</div>
+<div class="question question-11">
+<h3>Câu 11: Nguy cơ sinh khó trong trường hợp thai nhi dị tật bẩm sinh:</h3>
+<div class="options">
+<label id="label-11-A"><input type="radio" name="q11" onclick="checkAnswer(11, 'A')"> A. Phá thai nội khoa ít thành công</label>
+<label id="label-11-B"><input type="radio" name="q11" onclick="checkAnswer(11, 'B')"> B. Khi thai sẩy tiến hành gắp thai, mổ lấy thai</label>
+<label id="label-11-C"><input type="radio" name="q11" onclick="checkAnswer(11, 'C')"> C. Chuyển dạ sinh non đường âm đạo: nguy cơ kẹt phần thai, sót nhau</label>
+<label id="label-11-D"><input type="radio" name="q11" onclick="checkAnswer(11, 'D')"> D. Nguy cơ nhiễm trùng hiếm gặp</label>
+<input type="hidden" id="answer-11" value="C">
+</div>
+</div>
+<div class="question question-12">
+<h3>Câu 12: Sau khi xuống và quay, đầu sẽ cúi thêm do, NGOẠI TRỪ:</h3>
+<div class="options">
+<label id="label-12-A"><input type="radio" name="q12" onclick="checkAnswer(12, 'A')"> A. Sức đẩy của cơn co tử cung</label>
+<label id="label-12-B"><input type="radio" name="q12" onclick="checkAnswer(12, 'B')"> B. Sức đẩy của cơn co thành bụng lúc rặn sanh</label>
+<label id="label-12-C"><input type="radio" name="q12" onclick="checkAnswer(12, 'C')"> C. Sức cản của đáy chậu</label>
+<label id="label-12-D"><input type="radio" name="q12" onclick="checkAnswer(12, 'D')"> D. Sức cản của âm đạo</label>
+<input type="hidden" id="answer-12" value="D">
+</div>
+</div>
+<div class="question question-13">
+<h3>Câu 13: Đặc điểm của song thai, NGOẠI TRỪ:</h3>
+<div class="options">
+<label id="label-13-A"><input type="radio" name="q13" onclick="checkAnswer(13, 'A')"> A. Có nhiều dạng trên lâm sàng</label>
+<label id="label-13-B"><input type="radio" name="q13" onclick="checkAnswer(13, 'B')"> B. Song thai 2 noãn thường gặp hơn song thai 1 noãn</label>
+<label id="label-13-C"><input type="radio" name="q13" onclick="checkAnswer(13, 'C')"> C. Có thể theo dõi sanh ngả âm đạo</label>
+<label id="label-13-D"><input type="radio" name="q13" onclick="checkAnswer(13, 'D')"> D. Cần đánh giá số lượng bánh nhau trước khi quyết định để sanh ngả âm đạo</label>
+<input type="hidden" id="answer-13" value="D">
+</div>
+</div>
+<div class="question question-14">
+<h3>Câu 14: Đặc điểm của các biện pháp tránh thai:</h3>
+<div class="options">
+<label id="label-14-A"><input type="radio" name="q14" onclick="checkAnswer(14, 'A')"> A. Bao cao su là biện pháp tránh thai hiệu quả thấp</label>
+<label id="label-14-B"><input type="radio" name="q14" onclick="checkAnswer(14, 'B')"> B. Thuốc tiêm tránh thai là biện pháp tránh thai vĩnh viễn</label>
+<label id="label-14-C"><input type="radio" name="q14" onclick="checkAnswer(14, 'C')"> C. Bao cao su là biện pháp tránh thai khi cho bú mẹ</label>
+<label id="label-14-D"><input type="radio" name="q14" onclick="checkAnswer(14, 'D')"> D. Thuốc ngừa thai khẩn cấp là biện pháp tránh thai tạm thời</label>
+<input type="hidden" id="answer-14" value="C">
+</div>
+</div>
+<div class="question question-15">
+<h3>Câu 15: Nội dung nào là mục tiêu cụ thể của Nghị quyết 20/NQ-TW đến năm 2030:</h3>
+<div class="options">
+<label id="label-15-A"><input type="radio" name="q15" onclick="checkAnswer(15, 'A')"> A. Tỉ lệ tiêm chủng mở rộng đạt tối thiểu 95% với 14 loại vắc xin</label>
+<label id="label-15-B"><input type="radio" name="q15" onclick="checkAnswer(15, 'B')"> B. Giảm tỉ suất tử vong trẻ em (< 5 tuổi còn 18,5‰; < 1 tuổi còn 12,5‰)</label>
+<label id="label-15-C"><input type="radio" name="q15" onclick="checkAnswer(15, 'C')"> C. Giảm tỉ lệ suy dinh dưỡng thể thấp còi của trẻ em <5 tuổi dưới 20%</label>
+<label id="label-15-D"><input type="radio" name="q15" onclick="checkAnswer(15, 'D')"> D. Giảm tỉ lệ béo phì ở người trưởng thành dưới 12%</label>
+<input type="hidden" id="answer-15" value="A">
+</div>
+</div>
+<div class="question question-16">
+<h3>Câu 16: Vitamin A sử dụng trong điều trị và dự phòng ở trẻ:</h3>
+<div class="options">
+<label id="label-16-A"><input type="radio" name="q16" onclick="checkAnswer(16, 'A')"> A. Tất cả các bà mẹ sau đẻ trong vòng 1 tháng uống 1 viên 200.000 đơn vị</label>
+<label id="label-16-B"><input type="radio" name="q16" onclick="checkAnswer(16, 'B')"> B. Trẻ chứng mãn tính của ngộ độc vitamin A giống u não (giả u não)</label>
+<label id="label-16-C"><input type="radio" name="q16" onclick="checkAnswer(16, 'C')"> C. Triệu chứng ngộ độc cấp: buồn nôn, nôn; tăng kích thích, giới hạn vận động</label>
+<label id="label-16-D"><input type="radio" name="q16" onclick="checkAnswer(16, 'D')"> D. Trẻ từ 6-11 tháng uống 200.000 đơn vị/6 tháng</label>
+<input type="hidden" id="answer-16" value="A">
+</div>
+</div>
+
+</body>
+</html>
